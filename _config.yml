@@ -5,6 +5,16 @@ image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: "UA-46465113-2"
 
+navigation:
+  - title: "Home"
+    url: /
+  - title: "Astrophotography"
+    url: /astrophotography/
+  - title: "Landscapes"
+    url: /landscapes/
+  - title: "Nature"
+    url: /nature/
+
 # UI configs
 title: "Photography by Ram Patra"
 subtitle: "See the world through my eyes!"
