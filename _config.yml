@@ -16,15 +16,15 @@ navigation:
     url: /nature/
 
 # UI configs
-title: "Photographies by David C"
-subtitle: "See the world through my eyes!"
+title: "Horama by David C"
+subtitle: "The perception of time through my eyes!"
 author: "David C"
 header:
  title: "Photography"
  subtitle: "by David C"
 footer:
  name: "Hey there, my name is David C"
- bio: "TBD"
+ bio: "Throughout my life, I have faced a unique challenge with the perception of time: my insatiable desire to learn. This yearning has led me to explore a variety of experiences, each valuable in its own right. My constant pursuit of knowledge guides me on this ephemeral journey, and I am grateful for every lesson I have had the fortune to learn"
 web_design: "AJ"
 # Configure which exif data to display
 # Tag is the actual exif tag, icon is a fontawesome icon. Use JSON notation without line breaks
