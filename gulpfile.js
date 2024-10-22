@@ -2,55 +2,38 @@
 
 var gulp = require('gulp');
 var imageResize = require('gulp-image-resize');
-var sass = require('gulp-sass')(require('sass'));
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
 var del = require('del');
 
 gulp.task('delete', function () {
-    return del(['images/*.*']);
+    return del(['images/fulls/*.*', 'images/thumbs/*.*']);
 });
 
 gulp.task('resize-images', function () {
-    return gulp.src('images/*.*')
+    return gulp.src('images/*.*') // Reemplaza con el nombre de una imagen válida
         .pipe(imageResize({
             width: 1024,
-            imageMagick: true
+            upscale: false // Evita que se escale hacia arriba
         }))
-        .pipe(gulp.dest('images/fulls'))
+        .pipe(gulp.dest('images/fulls')) // Carpeta de salida
+        .on('error', function(err) {
+            console.error('Error during image resize:', err.message);
+        });
+});
+
+gulp.task('resize-thumbnails', function () {
+    return gulp.src('images/*.*') // Ruta a tus imágenes
         .pipe(imageResize({
             width: 512,
-            imageMagick: true
+            upscale: false // Evita que se escale hacia arriba
         }))
-        .pipe(gulp.dest('images/thumbs'));
+        .pipe(gulp.dest('images/thumbs')) // Carpeta de salida
+        .on('error', function(err) {
+            console.error('Error during thumbnail resize:', err.message);
+        });
 });
 
-// compile scss to css
-gulp.task('sass', function () {
-    return gulp.src('./assets/sass/main.scss')
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(rename({basename: 'main.min'}))
-        .pipe(gulp.dest('./assets/css'));
-});
+// Tarea de redimensionar imágenes
+gulp.task('resize', gulp.series('delete', gulp.parallel('resize-images', 'resize-thumbnails')));
 
-// watch changes in scss files and run sass task
-gulp.task('sass:watch', function () {
-    gulp.watch('./assets/sass/**/*.scss', ['sass']);
-});
-
-// minify js
-gulp.task('minify-js', function () {
-    return gulp.src('./assets/js/main.js')
-        .pipe(uglify())
-        .pipe(rename({basename: 'main.min'}))
-        .pipe(gulp.dest('./assets/js'));
-});
-
-// build task
-gulp.task('build', gulp.series('sass', 'minify-js'));
-
-// resize images
-gulp.task('resize', gulp.series('resize-images', 'delete'));
-
-// default task
-gulp.task('default', gulp.series('build', 'resize'));
+// Tarea por defecto
+gulp.task('default', gulp.series('resize'));
