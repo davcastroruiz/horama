@@ -9,7 +9,7 @@ navigation:
   - title: "Home"
     url: /
   - title: "Astrophotography"
-    url: /astrophotography/
+    url: "{{ site.baseurl }}/astrophotography/"
   - title: "Landscapes"
     url: /landscapes/
   - title: "Nature"
