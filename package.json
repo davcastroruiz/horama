@@ -1,7 +1,7 @@
 {
-  "name": "photography",
-  "version": "4.0.0",
-  "description": "A jekyll website for photographer cum developer",
+  "name": "horama",
+  "version": "1.0.0",
+  "description": "A jekyll website for portaafolio photography",
   "main": "npmfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
