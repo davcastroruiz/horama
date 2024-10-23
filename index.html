@@ -11,21 +11,40 @@ title: "Home"
 
     <!-- Main -->
     <div id="main" data-exif='{{ site.exif }}'>
-        {% assign shuffled_images = site.static_files %}
-        {% assign image_count = 0 %}
-        {% for image in shuffled_images %}
-        {% if image.path contains 'fulls' %}
-        {% if image_count < 12 %}
-        <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% assign image_count = image_count | plus: 1 %}
-        {% endif %}
-        {% endif %}
+        {% assign as_images = '' | split: '' %}
+        {% assign na_images = '' | split: '' %}
+        {% assign misc_images = '' | split: '' %}
+        {% assign an_images = '' | split: '' %}
+    
+        {% for image in site.static_files %}
+            {% if image.path contains 'fulls' %}
+                {% if image.name contains 'AS_' %}
+                    {% assign as_images = as_images | push: image %}
+                {% elsif image.name contains 'NA_' %}
+                    {% assign na_images = na_images | push: image %}
+                {% elsif image.name contains 'MISC_' %}
+                    {% assign misc_images = misc_images | push: image %}
+                {% elsif image.name contains 'AN_' %}
+                    {% assign an_images = an_images | push: image %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    
+        <!-- Limit to 3 images per category -->
+        {% assign as_images = as_images | slice: 0, 6 %}
+        {% assign na_images = na_images | slice: 0, 6 %}
+        {% assign misc_images = misc_images | slice: 0, 6 %}
+        {% assign an_images = an_images | slice: 0, 6 %}
+    
+        <!-- Merge all selected images -->
+        {% assign selected_images = as_images | concat: na_images | concat: misc_images | concat: an_images %}
+    
+        {% for image in selected_images %}
+            <article class="thumb image-item">
+                <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                    <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt="" data-name="{{ image.name }}"/>
+                </a>
+            </article>
         {% endfor %}
     </div>
 
@@ -33,3 +52,5 @@ title: "Home"
     {% include panel_categories.html %}
     {% include panel_footer.html %}
 </div>
+
+{% include sort.html %}

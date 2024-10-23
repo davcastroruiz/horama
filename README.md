@@ -56,7 +56,7 @@ You can make the contact form work without the need of any server-side code. Jus
 
 
 ## TODO
-- sort randomly the home photos page.
+- nothing so far. stable for now
 
 ## Credits
 Thanks to [AJ](https://twitter.com/ajlkn) for the website template which I enhanced for [jekyll](http://jekyllrb.com/).
