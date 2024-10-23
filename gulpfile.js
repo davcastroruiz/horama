@@ -32,9 +32,13 @@ gulp.task('resize-thumbnails', function () {
         });
 });
 
+gulp.task('delete-images', function () {
+    return del(['images/*.*']);
+});
+
 // Tarea de redimensionar imágenes
 gulp.task('resize', gulp.series('delete', gulp.parallel('resize-images', 'resize-thumbnails')));
 
 // Tarea por defecto
-gulp.task('default', gulp.parallel('resize-images', 'resize-thumbnails'));
+gulp.task('default', gulp.series(gulp.parallel('resize-images', 'resize-thumbnails'), 'delete-images', ));
 
