@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Home"
+title: "Animals"
 ---
 
 <!-- Wrapper -->
@@ -11,11 +11,9 @@ title: "Home"
 
     <!-- Main -->
     <div id="main" data-exif='{{ site.exif }}'>
-        {% assign shuffled_images = site.static_files %}
-        {% assign image_count = 0 %}
-        {% for image in shuffled_images %}
+        {% for image in site.static_files %}
         {% if image.path contains 'fulls' %}
-        {% if image_count < 12 %}
+        {% if image.name contains 'AN_' %}
         <article class="thumb">
             <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
                 <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
@@ -23,7 +21,6 @@ title: "Home"
             <!--<h2></h2>
             <p></p>-->
         </article>
-        {% assign image_count = image_count | plus: 1 %}
         {% endif %}
         {% endif %}
         {% endfor %}

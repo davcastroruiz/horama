@@ -7,6 +7,7 @@ A jekyll website for photographers
 1. Easy setup and you get a website of your own for __free__. No web hosting charges too.
 2. To add new pictures, you need to just upload them. __No code__ changes required.
 3. And, my favorite, you get to see EXIF data like __aperture, shutter speed, iso__ etc. when you click on any image, automagically. Moreover, you can customize this as per your needs.
+4. Check the index.html and create some prefix for your photos to make it work in categories.
 
 ## Quick Start
 If you know a tad about tech and love taking pictures then this open-source project may help you setup a website to showcase
@@ -55,6 +56,7 @@ You can make the contact form work without the need of any server-side code. Jus
 
 ## Credits
 Thanks to [AJ](https://twitter.com/ajlkn) for the website template which I enhanced for [jekyll](http://jekyllrb.com/).
+Thanks to Ram, for the initial project I forked.
 
 ## Backers
 
@@ -62,28 +64,10 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 <a href="https://opencollective.com/photography#backers" target="_blank"><img src="https://opencollective.com/photography/backers.svg?width=890"></a>
 
-<!-- <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> -->
 
-## Sponsors
-
-Proudly sponsored by [Presentify](http://presentify.compzets.com?ref=GitHub), [ToDoBar](http://todobar.compzets.com?ref=GitHub), and [BrowserStack](https://www.browserstack.com?ref=RamPatra). Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/photography#sponsors)]
-
-<table>
-    <tr>
-        <td>
-            <a href="https://presentifyapp.com/" target="_blank"><img src="https://presentifyapp.com/assets/img/presentify/app-icon-512.png" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://todobarapp.com/" target="_blank"><img src="https://todobarapp.com/assets/img/todobar/app-icon-512.png" width="150" height="150"></a>
-        </td>
-        <td>
-            <a href="https://www.browserstack.com?ref=RamPatra" target="_blank"><img src="https://i.imgur.com/LqI8CO1.png" width="130" height="130"></a>
-        </td>
-    </tr>
-</table>
 
 <a href="https://opencollective.com/photography#sponsors" target="_blank"><img src="https://opencollective.com/photography/sponsors.svg?width=890"></a>
 
 ---
 
-_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/ram__patra). I'll try my best to help 🙏._
+_P.S. Special thanks to AJ and Ram Patra._
