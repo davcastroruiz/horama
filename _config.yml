@@ -5,16 +5,6 @@ image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
 google_analytics: ""
 
-navigation:
-  - title: "Home"
-    url: /
-  - title: "Astrophotography"
-    url: "{{ site.baseurl }}/astrophotography/"
-  - title: "Landscapes"
-    url: /landscapes/
-  - title: "Nature"
-    url: /nature/
-
 # UI configs
 title: "Horama by David Castro"
 subtitle: "The perception of time through my eyes!"

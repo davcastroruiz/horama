@@ -36,4 +36,5 @@ gulp.task('resize-thumbnails', function () {
 gulp.task('resize', gulp.series('delete', gulp.parallel('resize-images', 'resize-thumbnails')));
 
 // Tarea por defecto
-gulp.task('default', gulp.series('resize'));
+gulp.task('default', gulp.parallel('resize-images', 'resize-thumbnails'));
+
