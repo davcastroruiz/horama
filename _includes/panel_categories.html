@@ -1,0 +1,76 @@
+<!-- Footer -->
+<footer id="categories" class="panel">
+    <div class="inner">
+        <div>
+            <section>
+                <h2>Dive into the realms of nature, captivating landscapes, mesmerizing astrophotography, and the beauty of animals.</h2>
+                <div class="grid">
+                    <div class="grid-item">
+                        <a href="{{ site.baseurl }}/animals">
+                            <div class="image-container">
+                                <img src="{{ site.baseurl }}/images/thumbs/DSC_0471.jpg" alt="Animals" data-name="Animals"/>
+                                <span class="category-label">Animals</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="{{ site.baseurl }}/astrophotography">
+                            <div class="image-container">
+                                <img src="{{ site.baseurl }}/images/thumbs/DSC_0471.jpg" alt="Astrophotography" data-name="Astrophotography"/>
+                                <span class="category-label">Astrophotography</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="{{ site.baseurl }}/landscape">
+                            <div class="image-container">
+                                <img src="{{ site.baseurl }}/images/thumbs/DSC_0471.jpg" alt="Landscape" data-name="Landscape"/>
+                                <span class="category-label">Landscape</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="grid-item">
+                        <a href="{{ site.baseurl }}/nature">
+                            <div class="image-container">
+                                <img src="{{ site.baseurl }}/images/thumbs/DSC_0471.jpg" alt="Nature" data-name="Nature"/>
+                                <span class="category-label">Nature</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</footer>
+
+<style>
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 16px; /* Ajusta el espacio entre los elementos de la cuadrícula */
+}
+
+.grid-item img {
+    width: 100%; /* Asegura que las imágenes se ajusten a su contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+    border-radius: 8px; /* Opcional: agrega bordes redondeados */
+}
+
+.image-container {
+    position: relative; /* Needed for absolute positioning of the label */
+}
+
+.category-label {
+    position: absolute;
+    bottom: 10px; /* Positioning from the bottom */
+    left: 10px; /* Positioning from the left */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 5px; /* Padding around the text */
+    border-radius: 4px; /* Optional: adds rounded corners */
+    font-size: 14px; /* Text size */
+}
+
+
+</style>
